@@ -303,12 +303,14 @@
 <li>ids</li>
 <li>waf</li>
 <li>邮箱</li>
-<li>杀毒软件<br>信息收集技巧：<br>1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在你的web日志里面查看，或者在cobaltstrike的weblog里面查看 ）<br>2.针对网站指纹，通过通用的识别工具，当然，看你的目标是属于那个地方，针对国外请用国外的指纹识别工具，国内的请用国内的识别工具。推荐Google 浏览器插件 Wappalyzer.<br>3.针对IP，端口请不要贸然使用nmap 之类的对目标直接进行扫描。<br>推荐使用shodan 搜索。<br>4.子域名收集请利用常见的爆破工具，在线查询dnsdb,Google Search。如果有cdn,那么请利用常规方式绕过cdn,例如域名解析记录，多地ping，网站反向链接接口等方式。<br>5.ids waf，通过网站的爆错，此处不敢妄言。收集时并没有发现对方的 waf,ids等。<br>6。邮箱（邮箱很重要），邮箱的收集请注意，对应邮箱的使用人是谁。收集对你有用的邮箱。例如，<a href="mailto:webadmin@xx.com" target="_blank" rel="noopener">webadmin@xx.com</a>,<a href="mailto:webmaster@xx.com" target="_blank" rel="noopener">webmaster@xx.com</a>又或者，<a href="mailto:netadmin@xx.com" target="_blank" rel="noopener">netadmin@xx.com</a><br>这些邮箱在后边对你有巨大帮助。</li>
+<li>杀毒软件</li>
 </ul>
+<hr>
+<p>信息收集技巧：<br>1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在你的web日志里面查看，或者在cobaltstrike的weblog里面查看 ）<br>2.针对网站指纹，通过通用的识别工具，当然，看你的目标是属于那个地方，针对国外请用国外的指纹识别工具，国内的请用国内的识别工具。推荐Google 浏览器插件 Wappalyzer.<br>3.针对IP，端口请不要贸然使用nmap 之类的对目标直接进行扫描。<br>推荐使用 shodan.io 搜索。<br>4.子域名收集请利用常见的爆破工具，在线查询dnsdb,Google Search。如果有cdn,那么请利用常规方式绕过cdn,例如域名解析记录，多地ping，网站反向链接等方式。<br>5.ids waf，通过网站的爆错，此处不敢妄言。收集时并没有发现对方的 waf,ids等。<br>6。邮箱（邮箱很重要），邮箱的收集请注意，对应邮箱的使用人是谁。收集对你有用的邮箱。例如，<a href="mailto:webadmin@xx.com" target="_blank" rel="noopener">webadmin@xx.com</a>,<a href="mailto:webmaster@xx.com" target="_blank" rel="noopener">webmaster@xx.com</a>又或者，<a href="mailto:netadmin@xx.com" target="_blank" rel="noopener">netadmin@xx.com</a><br>这些邮箱在后边对你有巨大帮助。</p>
 <h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><p>请将上述信息在记在自己的脑海里面，因为细节很重要。<br>现在针对网站挖掘常见的漏洞。快速的getshell的漏洞请一定熟记。且平时注意收集，不然等到用时方恨少。我这里有几个例子：<br>1.常见的中间件的反序列化，弱口令，未经授权的访问。<br>2.常见CMS的代码执行，文件上传，命令执行。例如struts2框架的代码执行，Drupal7,8的命令执行。wordpress插件的sql注入. wordpress的利用工具wpscan枚举管理员用户，做成字典爆破一波，或许有惊喜。<br>常见的系统漏洞。shellsock,heartbleed,imagemagick等。3.heartbleed可以获取到服务器内存中的账号密码cookie。请收集账号密码做成字典，后续爆破很重要，</p>
-<p>4.直接发送钓鱼邮件拿到办公网络初始入口。（有难度，收益大）<br>  可以利用cve-2017-0199 cve-2017-8759 cve-2017-11882<br>  其实理论上来将，发送一个邮件过去，目标中招。实际操作很难。<br>  难点在于第一：对方杀毒软件，防护情况不明。公开的exp已经被加入了各大杀毒软件的规则，<br>  绕过杀毒是一大难点。<br>  难点二：对于存在的邮件网关，能自动将你邮件带有的附件自动执行。如果发现有异常的链接信息，创建进程。会直接丢弃邮件。<br>  所以，在实际操作的时候非常困难，不回像想象中那么简单。</p>
+<p>4.直接发送钓鱼邮件拿到办公网络初始入口。（有难度，收益大）<br>  可以利用cve-2017-0199 cve-2017-8759 cve-2017-11882<br>  其实理论上来将，发送一个邮件过去，目标中招。实际操作很难。<br>  难点在于第一：对方杀毒软件，防护情况不明。公开的exp已经被加入了各大杀毒软件的规则，<br>  绕过杀毒是一大难点。<br>  难点二：对于存在的邮件网关，能自动将你邮件带有的附件自动执行。如果发现有异常的链接信息，创建进程。会直接丢弃邮件。<br>  所以，在实际操作的时候非常困难，不会像想象中那么简单。</p>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>  针对杀毒：考虑针对office文档的免杀，采取通用的静态免杀方法。（Google一下）在这里就免杀一项就花费了将近一周的时间。<br>  针对邮件网关，请不要直接发送附件。</p>
-<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><p>1.采取以上的方式并没有突破。最后我们采取发送钓鱼邮件的方式，已知对方无邮件网关，是自建邮箱。<br>三天以后，在Cobaltstrike 弹回了目标shell。然后是通过信息收集，进行内网渗透。<br>最后到域控。到赛门铁克杀毒服务器服务端 最后到邮件服务器，到VPN服务器端（此间留后门）<br>就记录到此 </p>
+<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><p>1.web方向并没有突破。最后我们采取发送钓鱼邮件的方式，已知对方无邮件网关，是自建邮箱。<br>三天以后，在Cobaltstrike 弹回了目标shell。然后是通过信息收集，进行内网渗透。<br>最后到域控。到赛门铁克杀毒服务器服务端 最后到邮件服务器，到VPN服务器端（此间留后门）<br>就记录到此 鉴于目标的敏感性，无图。</p>
 
           
         
